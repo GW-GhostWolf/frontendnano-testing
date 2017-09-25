@@ -40,7 +40,8 @@ function init() {
  * This function all supports a callback as the second parameter
  * which will be called after everything has run successfully.
  */
- function loadFeed(id, cb) {
+function loadFeed(id, cb) {
+    if (!id || isNaN(parseInt(id)) || id < 0 || id > allFeeds.length - 1) { return; }
      var feedUrl = allFeeds[id].url,
          feedName = allFeeds[id].name;
 
